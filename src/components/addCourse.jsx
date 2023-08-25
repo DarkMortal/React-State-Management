@@ -7,7 +7,7 @@ export default function AddCourse() {
   const [courseAuthor, setCourseAuthor] = useState("");
 
   const handleOnSubmit = () => {
-    if (!courseTitle || !courseAuthor) return alert("Please Add some Data");
+    if (!courseTitle.strip() || !courseAuthor.strip()) return alert("Please Add some Data");
     addCourse(
       new courseFunctions.courseClass(courseTitle, courseAuthor),
       Math.ceil(Math.random() * Math.pow(10, 6))
